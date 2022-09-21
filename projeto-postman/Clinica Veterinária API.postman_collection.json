@@ -1,0 +1,1083 @@
+{
+	"info": {
+		"_postman_id": "6045382c-c78e-415a-9542-9dffc19b1fc8",
+		"name": "Clinica Veterinária API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18444666"
+	},
+	"item": [
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "Salvar Cliente",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(409);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkbVYwWlhKcGJtRnlhVzlCWkcxcGJrQmxiV0ZwYkM1amIyMD0iLCJpc3MiOiJDTElOSUNBIiwiZXhwIjoxNjU5NzIxNDg4fQ.MIyh1aeNJqYfpbaGf-8to5nSXLTvgE8nb-rSoNEDZHs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"teste3\",\r\n    \"email\": \"testwwwweqq@gft.com\",\r\n    \"senha\": \"1234\",\r\n    \"telefone\": \"999999\",\r\n    \"endereco\": {\r\n        \"logradouro\": \"Rua XXXX\",\r\n        \"numero\": \"1234\",\r\n        \"complemento\": \"\",\r\n        \"cep\": \"1234567\"\r\n    },\r\n    \"perfis\": [\r\n        {\r\n            \"id\": 2,\r\n            \"descricao\": \"CLIENTE\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Cliente",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkbVYwWlhKcGJtRnlhVzlCWkcxcGJrQmxiV0ZwYkM1amIyMD0iLCJpc3MiOiJDTElOSUNBIiwiZXhwIjoxNjU5NzE1MzQ5fQ.FejkVCs9p4LsO_y6IOyEewxg5NlF3hXII2Ez4jP6tLM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/clientes/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"clientes",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Clientes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkbVYwWlhKcGJtRnlhVzlCWkcxcGJrQmxiV0ZwYkM1amIyMD0iLCJpc3MiOiJDTElOSUNBIiwiZXhwIjoxNjU5NzAwNjA1fQ.hSi37GwnivYODMBArZExKHVQyUvQnSYhx6beBuxM05M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Cliente",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkbVYwWlhKcGJtRnlhVzlCWkcxcGJrQmxiV0ZwYkM1amIyMD0iLCJpc3MiOiJDTElOSUNBIiwiZXhwIjoxNjU5NzE1MzQ5fQ.FejkVCs9p4LsO_y6IOyEewxg5NlF3hXII2Ez4jP6tLM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"teste3\",\r\n    \"email\": \"test@gft.com\",\r\n    \"senha\": \"1234\",\r\n    \"telefone\": \"999999\",\r\n    \"endereco\": {\r\n        \"logradouro\": \"Rua XXXX\",\r\n        \"numero\": \"1234\",\r\n        \"complemento\": \"\",\r\n        \"cep\": \"1234567\"\r\n    },\r\n    \"perfis\": [\r\n        {\r\n            \"id\": 2,\r\n            \"descricao\": \"CLIENTE\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/clientes/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"clientes",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir Cliente",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkbVYwWlhKcGJtRnlhVzlCWkcxcGJrQmxiV0ZwYkM1amIyMD0iLCJpc3MiOiJDTElOSUNBIiwiZXhwIjoxNjU5NzE1MzQ5fQ.FejkVCs9p4LsO_y6IOyEewxg5NlF3hXII2Ez4jP6tLM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/clientes/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"clientes",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Histórico de Atendimentos pelo Id do Cliente",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkbVYwWlhKcGJtRnlhVzlCWkcxcGJrQmxiV0ZwYkM1amIyMD0iLCJpc3MiOiJDTElOSUNBIiwiZXhwIjoxNjU5NzE1MzQ5fQ.FejkVCs9p4LsO_y6IOyEewxg5NlF3hXII2Ez4jP6tLM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/clientes/1/atendimentos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"clientes",
+								"1",
+								"atendimentos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Veterinario",
+			"item": [
+				{
+					"name": "Salvar Veterinario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkbVYwWlhKcGJtRnlhVzlCWkcxcGJrQmxiV0ZwYkM1amIyMD0iLCJpc3MiOiJDTElOSUNBIiwiZXhwIjoxNjU5NzIxNDg4fQ.MIyh1aeNJqYfpbaGf-8to5nSXLTvgE8nb-rSoNEDZHs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"teste\",\r\n    \"email\": \"teste@gft.com\",\r\n    \"senha\": \"1234\",\r\n    \"telefone\": \"999999\",\r\n    \"endereco\": {\r\n        \"logradouro\": \"Rua XXXX\",\r\n        \"numero\": \"1234\",\r\n        \"complemento\": \"\",\r\n        \"cep\": \"1234567\"\r\n    },\r\n    \"perfis\": [\r\n        {\r\n            \"id\": 3,\r\n            \"descricao\": \"VETERINARIO\"\r\n        }\r\n    ],\r\n    \"crmv\": 12345\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/veterinarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"veterinarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Veterinario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkbVYwWlhKcGJtRnlhVzlCWkcxcGJrQmxiV0ZwYkM1amIyMD0iLCJpc3MiOiJDTElOSUNBIiwiZXhwIjoxNjU5NzEzODQwfQ.T8KoG1cemwT1zn6OGTdz67eothU3-z2Za_xVhcmTnfE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/veterinarios/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"veterinarios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Veterinários",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkbVYwWlhKcGJtRnlhVzlCWkcxcGJrQmxiV0ZwYkM1amIyMD0iLCJpc3MiOiJDTElOSUNBIiwiZXhwIjoxNjU5NzE1MzQ5fQ.FejkVCs9p4LsO_y6IOyEewxg5NlF3hXII2Ez4jP6tLM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/veterinarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"veterinarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Veterinario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkbVYwWlhKcGJtRnlhVzlCWkcxcGJrQmxiV0ZwYkM1amIyMD0iLCJpc3MiOiJDTElOSUNBIiwiZXhwIjoxNjU5NzIxNDg4fQ.MIyh1aeNJqYfpbaGf-8to5nSXLTvgE8nb-rSoNEDZHs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"nome\": \"testeAtualizacao\",\r\n\"email\": \"teste@gft.com\",\r\n\"senha\": \"1234\",\r\n\"telefone\":\"999999\",\r\n\"crmv\": \"654321\",\r\n\"endereco\" : {\r\n\r\n    \"logradouro\" : \"Rua XXXX\",\r\n    \"numero\" : \"1234\",\r\n    \"complemento\" : \"\",\r\n    \"cep\": \"1234567\"\r\n}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/veterinarios/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"veterinarios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir Veterianario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkbVYwWlhKcGJtRnlhVzlCWkcxcGJrQmxiV0ZwYkM1amIyMD0iLCJpc3MiOiJDTElOSUNBIiwiZXhwIjoxNjU5NzIxNDg4fQ.MIyh1aeNJqYfpbaGf-8to5nSXLTvgE8nb-rSoNEDZHs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/veterinarios/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"veterinarios",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Histórico de Atendimentos pelo Id do Veterinario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkbVYwWlhKcGJtRnlhVzlCWkcxcGJrQmxiV0ZwYkM1amIyMD0iLCJpc3MiOiJDTElOSUNBIiwiZXhwIjoxNjU5NzE2ODA4fQ.rHtTmsf4GtlRhCQRrabbe0_xKeZ10shJFZw1vCegDpk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/veterinarios/1/atendimentos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"veterinarios",
+								"1",
+								"atendimentos"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "password",
+						"value": "123",
+						"type": "string"
+					},
+					{
+						"key": "username",
+						"value": "joaograndao@email.com",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Cachorro",
+			"item": [
+				{
+					"name": "Salvar Cachorro",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbTloYjBCbGJXRnBiQzVqYjIwPSIsImlzcyI6IkNMSU5JQ0EiLCJleHAiOjE2NTk3MjI5MDl9.9LVDzo3w6pG9Jpvj3AQuztNFpuW4ln857RXeM3pkj4o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Cookie\",\r\n    \"raca\": \"Affenpinscher\",\r\n    \"idade\": \"13\",\r\n    \"tamanho\": \"50.0\",\r\n    \"porte\": \"Pequeno\",\r\n    \"peso\": \"15.0\",\r\n    \"sexo\": \"Macho\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/cachorros?cliente=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"cachorros"
+							],
+							"query": [
+								{
+									"key": "cliente",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Cachorro",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkbVYwWlhKcGJtRnlhVzlCWkcxcGJrQmxiV0ZwYkM1amIyMD0iLCJpc3MiOiJDTElOSUNBIiwiZXhwIjoxNjU5NzIyNjkzfQ.utCqiFIDScnP1ELrhoOx2iT2iOhNlaSfrPXKH3Ll2ME",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/cachorros/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"cachorros",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Cachorros",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkbVYwWlhKcGJtRnlhVzlCWkcxcGJrQmxiV0ZwYkM1amIyMD0iLCJpc3MiOiJDTElOSUNBIiwiZXhwIjoxNjU5NzIyNjkzfQ.utCqiFIDScnP1ELrhoOx2iT2iOhNlaSfrPXKH3Ll2ME",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/cachorros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"cachorros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Cachorro",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkbVYwWlhKcGJtRnlhVzlCWkcxcGJrQmxiV0ZwYkM1amIyMD0iLCJpc3MiOiJDTElOSUNBIiwiZXhwIjoxNjU5NTczMDE4fQ.9f2_u0rIvXTNGcP5O6c_Dv45sItu6LzUFM8HMt8RzI0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Cachorro loko\",\r\n    \"raca\": \"Affenpinscer\",\r\n    \"idade\": \"13\",\r\n    \"tamanho\": \"50.0\",\r\n    \"porte\": \"Pequeno\",\r\n    \"peso\": \"15.0\",\r\n    \"sexo\": \"Macho\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/cachorros/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"cachorros",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir Cachorro",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkbVYwWlhKcGJtRnlhVzlCWkcxcGJrQmxiV0ZwYkM1amIyMD0iLCJpc3MiOiJDTElOSUNBIiwiZXhwIjoxNjU5NzIyNjkzfQ.utCqiFIDScnP1ELrhoOx2iT2iOhNlaSfrPXKH3Ll2ME",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/cachorros/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"cachorros",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Atendimento",
+			"item": [
+				{
+					"name": "Salvar Atendimento",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkbVYwWlhKcGJtRnlhVzlCWkcxcGJrQmxiV0ZwYkM1amIyMD0iLCJpc3MiOiJDTElOSUNBIiwiZXhwIjoxNjU5NzIyNjkzfQ.utCqiFIDScnP1ELrhoOx2iT2iOhNlaSfrPXKH3Ll2ME",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"comentarios\": \"Teste\",\r\n\r\n    \"idade\": 9,\r\n\r\n    \"nome\": \"Rex\",\r\n\r\n    \"peso\": 9.0,\r\n\r\n    \"tamanho\": 40,\r\n\r\n    \"descricaoAtendimento\": \"Cachorro com raiva\",\r\n\r\n    \"diagnostico\": \"Raiva\",\r\n\r\n    \"titulo\": \"Consulta\",\r\n\r\n    \"dadosCachorroDia\": {\r\n                        \"nome\": \"Totó\",\r\n                        \"idade\": 10,\r\n                        \"tamanho\": 15.0,\r\n                        \"peso\": 2.0\r\n                    }\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/atendimentos?veterinario=1&cliente=1&cachorro=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"atendimentos"
+							],
+							"query": [
+								{
+									"key": "veterinario",
+									"value": "1"
+								},
+								{
+									"key": "cliente",
+									"value": "1"
+								},
+								{
+									"key": "cachorro",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Atendimento",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkbVYwWlhKcGJtRnlhVzlCWkcxcGJrQmxiV0ZwYkM1amIyMD0iLCJpc3MiOiJDTElOSUNBIiwiZXhwIjoxNjU5NzIyNjkzfQ.utCqiFIDScnP1ELrhoOx2iT2iOhNlaSfrPXKH3Ll2ME",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/atendimentos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"atendimentos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Atendimentos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkbVYwWlhKcGJtRnlhVzlCWkcxcGJrQmxiV0ZwYkM1amIyMD0iLCJpc3MiOiJDTElOSUNBIiwiZXhwIjoxNjU5NzIyNjkzfQ.utCqiFIDScnP1ELrhoOx2iT2iOhNlaSfrPXKH3Ll2ME",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/atendimentos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"atendimentos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Atendimento",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkbVYwWlhKcGJtRnlhVzlCWkcxcGJrQmxiV0ZwYkM1amIyMD0iLCJpc3MiOiJDTElOSUNBIiwiZXhwIjoxNjU5NzIyNjkzfQ.utCqiFIDScnP1ELrhoOx2iT2iOhNlaSfrPXKH3Ll2ME",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n\"titulo\":\"testando\",\r\n\r\n\"comentarios\": \"testando\",\r\n\r\n\"diagnostico\":\"testando\",\r\n\r\n\"descricaoAtendimento\":\"Rotina\",\r\n\r\n\"dadosCachorroDia\": {\r\n\r\n        \"nome\":\"toto\",\r\n\r\n        \"idade\":\"12\",\r\n\r\n        \"tamanho\":\"10.5\",\r\n\r\n        \"peso\":\"6\"\r\n\r\n}\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/atendimentos/1?veterinario=1&cliente=1&cachorro=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"atendimentos",
+								"1"
+							],
+							"query": [
+								{
+									"key": "veterinario",
+									"value": "1"
+								},
+								{
+									"key": "cliente",
+									"value": "1"
+								},
+								{
+									"key": "cachorro",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir Atendimento",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkbVYwWlhKcGJtRnlhVzlCWkcxcGJrQmxiV0ZwYkM1amIyMD0iLCJpc3MiOiJDTElOSUNBIiwiZXhwIjoxNjU5NzIyNjkzfQ.utCqiFIDScnP1ELrhoOx2iT2iOhNlaSfrPXKH3Ll2ME",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/atendimentos/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"atendimentos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Autenticação",
+			"item": [
+				{
+					"name": "Autenticação Veterinario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"joao@email.com\",\r\n    \"senha\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Autenticação Cliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"joaograndao@email.com\",\r\n    \"senha\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Autenticação Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"veterinarioAdmin@email.com\",\r\n    \"senha\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Requisições DogApi",
+			"item": [
+				{
+					"name": "Pegando dados da raça pelo nome - coloque o nome exato da raça",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkbVYwWlhKcGJtRnlhVzlCWkcxcGJrQmxiV0ZwYkM1amIyMD0iLCJpc3MiOiJDTElOSUNBIiwiZXhwIjoxNjU5NDU5MDk0fQ.vrt00OQR8NZycfO4P1jKfUh4qc_1Q8i2aim_SrZjTJw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/dogapi/Golden Retriever",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"dogapi",
+								"Golden Retriever"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscando todas as raças cadastradas no sistema",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkbVYwWlhKcGJtRnlhVzlCWkcxcGJrQmxiV0ZwYkM1amIyMD0iLCJpc3MiOiJDTElOSUNBIiwiZXhwIjoxNjU5NDc4NTY1fQ.zVpEJhqgbwt4zcl187yC_4AA6d83tt7opsU1EAyvTnc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/dogapi/listarTodasRacas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"dogapi",
+								"listarTodasRacas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscando Imagens para todas as raças",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkbVYwWlhKcGJtRnlhVzlCWkcxcGJrQmxiV0ZwYkM1amIyMD0iLCJpc3MiOiJDTElOSUNBIiwiZXhwIjoxNjU5NDc4NTY1fQ.zVpEJhqgbwt4zcl187yC_4AA6d83tt7opsU1EAyvTnc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/dogapi/ImagemTodasRacas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"dogapi",
+								"ImagemTodasRacas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscando imagens específica pela raça",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkbVYwWlhKcGJtRnlhVzlCWkcxcGJrQmxiV0ZwYkM1amIyMD0iLCJpc3MiOiJDTElOSUNBIiwiZXhwIjoxNjU5NDc4NTY1fQ.zVpEJhqgbwt4zcl187yC_4AA6d83tt7opsU1EAyvTnc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/dogapi/ImagemRaca/Miniature Pinscher",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"dogapi",
+								"ImagemRaca",
+								"Miniature Pinscher"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
